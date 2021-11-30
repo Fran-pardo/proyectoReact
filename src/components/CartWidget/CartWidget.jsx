@@ -5,9 +5,9 @@ const CartWidget = () => {
 
     return(
 
-        <button style={{color: 'white', backgroundColor: 'blue', border: 'none', paddingLeft: 15, paddingRight: 15}}>
+        <button style={{color: 'white', background: 'none', border: 'none', paddingLeft: 15, paddingRight: 15}}>
             <FontAwesomeIcon icon={faShoppingCart} />
-            1
+            0
         </button>
 
     )

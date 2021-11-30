@@ -1,0 +1,9 @@
+.container {
+    height: 100vh;
+    background-color: #f5f5dc;
+}
+
+h1 {
+    padding: 2rem;
+    color: #a9a9a9;
+}

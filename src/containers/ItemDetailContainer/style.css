@@ -1,0 +1,47 @@
+.containerItemDetail {
+    height: 100vh;
+    background-color: #ffe4c4;
+}
+
+.imgItem {
+    width: 60vw;
+}
+
+.itemContainer {
+    padding: 3rem;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: flex-start;
+}
+
+.itemNombre {
+    padding: 3rem;
+}
+
+.itemPrecio {
+    padding: 1.5rem;
+}
+
+.caracteristicasContainer {
+    padding-top: 2rem;
+    margin: 0 auto;
+    width: 80vw;
+}
+
+.caracteristicas {
+    display: flex;
+}
+
+.tituloGeneral {
+    padding-left: 2rem;
+    border-bottom: solid 2px black;
+}
+
+ul {
+    padding-right: 4rem;
+}
+
+.descripcionContainer {
+    margin: 0 auto;
+    width: 80vw;
+}

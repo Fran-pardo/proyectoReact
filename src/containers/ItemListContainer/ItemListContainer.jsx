@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import ItemCount from '../../components/ItemCount/ItemCount';
-import obtenerProductos from '../../productos';
+import {obtenerProductos} from '../../productos';
 import './style.css';
 import ItemList from '../../components/ItemList/ItemList';
 

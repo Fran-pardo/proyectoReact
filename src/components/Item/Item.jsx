@@ -5,17 +5,15 @@ import CardMedia from '@mui/material/CardMedia';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 
+import './style.css';
+
 const Item = ({producto}) => {
 
     return(
-        <div>
+        <div className='card'>
+
             <Card sx={{ maxWidth: 345 }}>
-                <CardMedia
-                    component="img"
-                    height="140"
-                    image={producto.img}
-                    alt="green iguana"
-                />
+                <CardMedia component="img" height="140" image={producto.img} alt={producto.nombre} />
                 <CardContent>
                     <Typography gutterBottom variant="h5" component="div">
                         {producto.nombre}
@@ -25,9 +23,10 @@ const Item = ({producto}) => {
                     </Typography>
                 </CardContent>
                 <CardActions>
-                    <Button size="small" variant="outlined">Ver más</Button>
+                    <Button size="small">Ver más</Button>
                 </CardActions>
             </Card>
+
         </div>
     )
 

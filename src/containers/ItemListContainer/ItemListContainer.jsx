@@ -1,31 +1,39 @@
 import { useEffect, useState } from 'react';
-import ItemCount from '../../components/ItemCount/ItemCount';
-import {obtenerProductos} from '../../productos';
+import {obtenerProductos, obtenerProductosByCategoria} from '../../productos';
 import './style.css';
 import ItemList from '../../components/ItemList/ItemList';
+import { useParams } from 'react-router-dom';
 
 
 const ItemListContainer = ({greeting}) => {
 
-    const [productos, setProductos] = useState([])
+    const {categoryId} = useParams()
+    const [productos, setProductos] = useState([]);
 
-    useEffect(() => {
-        const list = obtenerProductos()
-        list.then(list => {
-            setProductos(list)
-        })
+    useEffect( ()=> {
+        
+        ( async () => {
 
-        return(() => {
-            setProductos([])
-        })
-    }, [])
+            if (categoryId !== undefined){
+
+                const list = await obtenerProductosByCategoria(categoryId);
+                setProductos(list)
+
+            } else {
+
+                const list = await obtenerProductos()
+                setProductos(list)
+
+            }
+        })()
+
+    }, [categoryId])
 
     return(
 
         <div className='container'>
             <h1>{greeting}</h1>
             <ItemList productos={productos} />
-            <ItemCount stock={18} initial={1} onAdd={ () => console.log('Producto agregado correctamente')} />
         </div>
 
     )

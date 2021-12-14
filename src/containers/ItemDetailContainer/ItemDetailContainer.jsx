@@ -1,23 +1,27 @@
-import { obtenerItem } from "../../productos";
+import { obtenerProductoById } from "../../productos";
 import ItemDetail from "../../components/ItemDetail/ItemDetail";
 import { useEffect, useState } from 'react';
 import './style.css';
+import { useParams } from "react-router-dom";
 
 
 const ItemDetailContainer = () => {
 
     const [item, setItem] = useState([])
+    const { paramId } = useParams()
 
     useEffect(() => {
-        const item = obtenerItem()
-        item.then(item => {
+        obtenerProductoById(paramId).then(item => {
             setItem(item)
+        }).catch(err  => {
+            console.log(err)
         })
 
-        return(() => {
-            setItem([])
+        return (() => {
+            setItem()
         })
-    }, [])
+
+    }, [paramId])
 
     return (
 

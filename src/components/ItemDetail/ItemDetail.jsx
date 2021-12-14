@@ -1,5 +1,5 @@
 
-
+import ItemCount from '../ItemCount/ItemCount';
 
 const ItemDetail = ({item}) => {
 
@@ -10,7 +10,7 @@ const ItemDetail = ({item}) => {
                 <div>
                     <div className='itemNombre'>
                         <h2>{item.nombre}</h2>
-                        <p>1999 | 220.000 km | Manual</p>
+                        <p>{item.anio} | {item.km} km | {item.transmision}</p>
                     </div>
                     <div className='itemPrecio'>
                         <h4>Precio: {item.precio}</h4>
@@ -18,6 +18,7 @@ const ItemDetail = ({item}) => {
                     </div>
                 </div>
             </div>
+            <ItemCount stock={18} initial={1} onAdd={ () => console.log('Producto agregado correctamente')} />
             <div className='descripcionContainer'>
                 <h2>Descripción</h2>
                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Impedit commodi reprehenderit ipsam asperiores illo quo officiis consectetur possimus repellendus exercitationem autem vitae inventore aperiam molestias laboriosam necessitatibus corporis, sed in quod ab perspiciatis est eveniet quis corrupti? Commodi eligendi molestias praesentium eum incidunt dolor iste tempora officia iure. Illum, obcaecati. Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis perspiciatis mollitia sint quae iste maiores voluptate quia fugiat vel magnam molestiae, debitis, suscipit quas deleniti.</p>
@@ -28,13 +29,13 @@ const ItemDetail = ({item}) => {
                     <h4 className='tituloGeneral'>General</h4>
                     <li className='caracteristicas'>
                         <ul>
-                            Transmisión: Manual
+                            Transmisión: {item.transmision}
                         </ul>
                         <ul>
                             Stock Id: {item.id}
                         </ul>
                         <ul>
-                            Numero de puertas: 3
+                            Numero de puertas: {item.puertas}
                         </ul>
                     </li>
                 </div>

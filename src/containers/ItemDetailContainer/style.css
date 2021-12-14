@@ -1,10 +1,13 @@
 .containerItemDetail {
-    height: 100vh;
     background-color: #ffe4c4;
 }
 
 .imgItem {
     width: 60vw;
+}
+
+.card {
+    margin: 20px
 }
 
 .itemContainer {
@@ -33,6 +36,7 @@
 }
 
 .tituloGeneral {
+    display: flex;
     padding-left: 2rem;
     border-bottom: solid 2px black;
 }
@@ -42,6 +46,7 @@ ul {
 }
 
 .descripcionContainer {
+    padding-top: 2.5rem;
     margin: 0 auto;
     width: 80vw;
 }

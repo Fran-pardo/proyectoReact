@@ -2,7 +2,7 @@ import React from 'react';
 
 import CartWidget from '../CartWidget/CartWidget';
 
-import {Link} from 'react-router-dom';
+import {Link, NavLink} from 'react-router-dom';
 
 
 const NavBar = () => {
@@ -29,7 +29,9 @@ const NavBar = () => {
                     </ul>
                 </div>
                 <div>
-                    <CartWidget />
+                    <NavLink to="/cart">
+                        <CartWidget />
+                    </NavLink>
                 </div>
             </div>
         </nav>

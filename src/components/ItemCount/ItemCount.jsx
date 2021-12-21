@@ -2,7 +2,7 @@ import React, {useState} from 'react';
 import './style.css';
 
 
-const ItemCount = ({onConfirm, maxQuantity}) => {
+const ItemCount = ({item, quantity, addItem, maxQuantity}) => {
 
     const [count, setCount] = useState(0);
     
@@ -19,7 +19,6 @@ const ItemCount = ({onConfirm, maxQuantity}) => {
         }
     }
 
-
     return (
 
         <div>
@@ -27,11 +26,12 @@ const ItemCount = ({onConfirm, maxQuantity}) => {
             <p>{count}</p>
             <button onClick={restarCantidad}>-</button>
             <button onClick={sumarCantidad}>+</button>
-            <button onClick={() => onConfirm(count)}>Agregar al carrito</button>
+            <button onClick={() => addItem({item, quantity})}>Agregar al carrito</button>
 
         </div>
-
+        
     )
 }
+
 
 export default ItemCount;

@@ -1,14 +1,13 @@
 
-import { Link } from 'react-router-dom';
+import { useContext } from 'react';
+import { CartContext } from '../Context/CartContext';
 import ItemCount from '../ItemCount/ItemCount';
 
 const ItemDetail = ({item}) => {
 
-    const Count = (count) => count > 0 ? <Link to={"/cart"}>Ir al carrito</Link> : <ItemCount onConfirm={addToCart} maxQuantity={item.stock}/>
+    const {addItem} = useContext(CartContext)
 
-    const addToCart = () => {
-        console.log("Producto agregado al carrito")
-    }
+    const Count = (count) => count > 0 ? <ItemCount item={item} maxQuantity={item.stock} addItem={addItem} /> : <ItemCount item={item} maxQuantity={item.stock} addItem={addItem} />
 
     return (
         <div>
@@ -27,6 +26,7 @@ const ItemDetail = ({item}) => {
             </div>
             
             <Count />
+    
             <div className='descripcionContainer'>
                 <h2>Descripción</h2>
                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Impedit commodi reprehenderit ipsam asperiores illo quo officiis consectetur possimus repellendus exercitationem autem vitae inventore aperiam molestias laboriosam necessitatibus corporis, sed in quod ab perspiciatis est eveniet quis corrupti? Commodi eligendi molestias praesentium eum incidunt dolor iste tempora officia iure. Illum, obcaecati. Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis perspiciatis mollitia sint quae iste maiores voluptate quia fugiat vel magnam molestiae, debitis, suscipit quas deleniti.</p>

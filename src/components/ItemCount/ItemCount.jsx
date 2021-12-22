@@ -2,20 +2,20 @@ import React, {useState} from 'react';
 import './style.css';
 
 
-const ItemCount = ({item, quantity, addItem, maxQuantity}) => {
+const ItemCount = ({item, addItem, maxQuantity}) => {
 
-    const [count, setCount] = useState(0);
+    const [qty, setQty] = useState(1);
     
 
     const sumarCantidad = () => {
-        if (count < maxQuantity) {
-            setCount(count + 1);
+        if (qty < maxQuantity) {
+            setQty(qty + 1);
         }
     }
 
     const restarCantidad = () => {
-        if (count > 1) {
-            setCount(count - 1);
+        if (qty > 0) {
+            setQty(qty - 1);
         }
     }
 
@@ -23,10 +23,10 @@ const ItemCount = ({item, quantity, addItem, maxQuantity}) => {
 
         <div>
 
-            <p>{count}</p>
-            <button onClick={restarCantidad}>-</button>
-            <button onClick={sumarCantidad}>+</button>
-            <button onClick={() => addItem({item, quantity})}>Agregar al carrito</button>
+            <p>{qty}</p>
+            <button className="py-2 px-4 m-4 rounded" onClick={restarCantidad}>-</button>
+            <button className="py-2 px-4 m-4 rounded" onClick={sumarCantidad}>+</button>
+            <button className="py-2 px-4 m-4 rounded" onClick={() => addItem(item, qty)}>Agregar al carrito</button>
 
         </div>
         

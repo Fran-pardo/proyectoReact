@@ -6,20 +6,29 @@ export const CartProvider = ({children}) => {
 
     const [items, setItems] = useState([])
 
-    const addItem = (item, quantity) => (
+    const isInCart = (id) => {
+
+        const found = items.find(item => item.id === id);
+        return found
+
+    }
+
+    const addItem = (item, qty) => {
 
         isInCart(item.id)
         ?
         setItems(items.map((prod) => {
-            if (prod.id === item.id) {
-                prod.quantity += quantity
+            if(prod.id === item.id) {
+                prod.qty += qty
             }
             return prod
         }))
         :
-        setItems([...items, {id: item.id, name: item.nombre, price: item.precio, quantity: quantity }])
+        setItems([...items, {id: item.id, nombre: item.nombre, precio: item.precio, qty: qty}])
 
-    )
+        console.log(items)
+
+    }
 
     const removeItem = (id) => {
 
@@ -29,13 +38,6 @@ export const CartProvider = ({children}) => {
 
     const clearItems = () => {
         setItems([])
-    }
-
-    const isInCart = (id) => {
-
-        const found = items.find(item => item.id === id);
-        return found
-
     }
 
     return (

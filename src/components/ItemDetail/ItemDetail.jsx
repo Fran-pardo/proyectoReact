@@ -1,13 +1,15 @@
 
+import { useState } from 'react';
 import { useContext } from 'react';
 import { CartContext } from '../Context/CartContext';
 import ItemCount from '../ItemCount/ItemCount';
+import { Link } from 'react-router-dom';
 
 const ItemDetail = ({item}) => {
 
-    const {addItem} = useContext(CartContext)
+    const { addItem } = useContext(CartContext)
 
-    const Count = (count) => count > 0 ? <ItemCount item={item} maxQuantity={item.stock} addItem={addItem} /> : <ItemCount item={item} maxQuantity={item.stock} addItem={addItem} />
+    const [add, setAdd] = useState(false)
 
     return (
         <div>
@@ -24,8 +26,14 @@ const ItemDetail = ({item}) => {
                     </div>
                 </div>
             </div>
-            
-            <Count />
+
+            {
+                add 
+                ? 
+                <Link to="/cart">Finalizar Compra</Link>
+                :
+                <ItemCount item={item} maxQuantity={item.stock} addItem={addItem} />
+            }
     
             <div className='descripcionContainer'>
                 <h2>Descripción</h2>

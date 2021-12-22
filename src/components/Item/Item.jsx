@@ -20,7 +20,7 @@ const Item = ({producto}) => {
                         {producto.nombre}
                     </Typography>
                     <Typography variant="body2" color="text.secondary">
-                        {producto.precio}
+                        US${producto.precio}
                     </Typography>
                 </CardContent>
                 <CardActions>

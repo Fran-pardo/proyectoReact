@@ -21,7 +21,7 @@ const ItemDetail = ({item}) => {
                         <p>{item?.anio} | {item?.km} km | {item?.transmision}</p>
                     </div>
                     <div className='itemPrecio'>
-                        <h4>Precio: {item?.precio}</h4>
+                        <h4>Precio: US${item?.precio}</h4>
                         <button>Reservar vehículo</button>
                     </div>
                 </div>

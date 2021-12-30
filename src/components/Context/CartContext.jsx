@@ -1,17 +1,26 @@
 import React, {createContext, useState} from "react";
-import { Link } from "react-router-dom";
+
 
 export const CartContext = createContext([])
 
 export const CartProvider = ({children}) => {
 
     const [items, setItems] = useState([])
+    const [total, setTotal] = useState(0)
 
     const isInCart = (id) => {
 
         const found = items.find(item => item.id === id);
         return found
 
+    }
+
+    const getTotal = () => {
+        const sumaTotal = items.reduce(
+            (prev, curr) => prev + curr.qty * curr.precio,
+            0
+        );
+        return sumaTotal;
     }
 
     const addItem = (item, qty) => {
@@ -43,7 +52,7 @@ export const CartProvider = ({children}) => {
 
     return (
         
-        <CartContext.Provider value={{ items, addItem, removeItem, clearItems}}>
+        <CartContext.Provider value={{ items, addItem, removeItem, clearItems, getTotal}}>
             {children}
         </CartContext.Provider>
     )

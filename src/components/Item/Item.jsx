@@ -13,7 +13,7 @@ const Item = ({producto}) => {
     return(
         <div className='card'>
 
-            <Card sx={{ maxWidth: 345 }}>
+            <Card sx={{ maxWidth: 250 }}>
                 <CardMedia component="img" height="140" image={producto.img} alt={producto.nombre} />
                 <CardContent>
                     <Typography gutterBottom variant="h5" component="div">
@@ -24,7 +24,7 @@ const Item = ({producto}) => {
                     </Typography>
                 </CardContent>
                 <CardActions>
-                    <Link to={`/detail/${producto.id}`}>Ver más</Link>
+                    <Link className='boton-ver-mas' to={`/detail/${producto.id}`}>Ver más</Link>
                 </CardActions>
             </Card>
 

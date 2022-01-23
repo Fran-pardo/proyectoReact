@@ -3,3 +3,11 @@
     flex-wrap: wrap;
     justify-content: space-evenly;
 }
+
+.bgContenedor {
+    background-color: #f3f3f3;
+}
+
+.ourVehicles {
+    padding: 4rem 0rem 2rem 0rem;
+}

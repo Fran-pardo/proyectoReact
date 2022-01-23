@@ -1,0 +1,43 @@
+
+
+.itemCount {
+    display: flex;
+    flex-direction: column;
+    margin-top: 3rem;
+}
+
+.contador {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: baseline;
+    margin-bottom: 1rem;
+}
+
+.quantity {
+    margin: 0;
+    border-top: 1.5px solid rgba(126,126,131,.15);
+    border-bottom: 1.5px solid rgba(126,126,131,.15);
+    padding: 0.5rem 2.5rem;
+    background-color: white;
+}
+
+.botonQuantity {
+    margin: 0;
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 3px;
+}
+
+.botonAgregar {
+    background-color: #0084e0;
+    border: 1px solid transparent;
+    border-bottom: 2px solid #016ab3;
+    color: #fff;
+    padding: 0.25rem;
+    border-radius: 3px;
+}
+
+.botonAgregar:hover {
+    background-color: #016ab3;
+}

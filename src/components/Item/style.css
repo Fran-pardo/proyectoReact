@@ -1,18 +1,20 @@
 
+.card {
+    box-shadow: 0px 0px 10px;
+}
 
 .boton-ver-mas {
     font-size: 1rem;
-    background-color: #3498DB;
+    background-color: #5DADE2;
     color: white;
     text-decoration: none;
     display: inline-block;
     cursor: pointer;
-    border: #2E86C1 0.125em solid;
     padding: 0.25em 1em;
     border-radius: 0.25em;
 }
 
 .boton-ver-mas:hover {
-    background-color: #5DADE2;
+    background-color: #3498DB;
     color: white;
 }

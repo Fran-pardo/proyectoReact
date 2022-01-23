@@ -76,9 +76,14 @@ const ItemListContainer = ({greeting}) => {
 
     return(
 
-        <div className='container'>
-            <h1 className="text-7xl underline">{greeting}</h1>
+        <div>
+
+            <div className='bg home'></div>
+            <div className='bg-text container'>
+                <h1>CLASSIC SWEET CARS</h1>
+            </div>
             <ItemList productos={productos} />
+
         </div>
 
     )

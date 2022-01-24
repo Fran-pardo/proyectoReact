@@ -80,7 +80,7 @@ const ItemListContainer = ({greeting}) => {
 
             <div className='bg home'></div>
             <div className='bg-text'>
-                <h1 className='title'>CLASSIC SWEET CARS</h1>
+                <h1 className='title'>AGENCIA SAFATLE</h1>
             </div>
             <ItemList productos={productos} />
 

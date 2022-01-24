@@ -27,42 +27,41 @@ const ContactForm = ({ toggleVisibility, setContact }) => {
 
     return (
         <div className='ContactContainer'>
-          <div>Contacto</div>
+
+          <h5>Contacto</h5>
+
           <form className='ContactForm' onSubmit={handleContactForm}>
-            <label className='LabelContact'>Nombre:
-              <input
-                className='InputContact'
-                type='text'
-                value={buyer}
-                onChange={({ target }) => setBuyer(target.value)}
-              />
-            </label>
-            <label className='LabelContact'>Telefono:
-              <input
-                className='InputContact'
-                type='text'
-                value={phone}
-                onChange={({ target }) => setPhone(target.value)}
-              />
-            </label>
-            <label className='LabelContact'>Direccion:
-              <input
-                className='InputContact'
-                type='text'
-                value={adress}
-                onChange={({ target }) => setAddress(target.value)}
-              />
-            </label>
-            <label className='LabelContact'>Comentario: 
-              <input
-                className='InputContact'
-                type='text'
-                value={comment}
-                onChange={({ target }) => setComment(target.value)}
-              />
-            </label>
-            <button className='Button' type='submit'>Confirmar</button>
+
+            <div>
+              <label className='LabelContact'>Nombre:
+                <input className='InputContact' type='text' value={buyer} onChange={({ target }) => setBuyer(target.value)}/>
+              </label>
+            </div>
+
+            <div>
+              <label className='LabelContact'>Telefono:
+                <input className='InputContact' type='text' value={phone} onChange={({ target }) => setPhone(target.value)}/>
+              </label>
+            </div>
+
+            <div>
+              <label className='LabelContact'>Direccion:
+                <input className='InputContact' type='text' value={adress} onChange={({ target }) => setAddress(target.value)}/>
+              </label>
+            </div>
+
+            <div>
+              <label className='LabelContact'>Comentario: 
+                <input className='InputContact' type='text' value={comment} onChange={({ target }) => setComment(target.value)}/>
+              </label>
+            </div>
+
+            <div>
+              <button className='btnContacto' type='submit'>Confirmar</button>
+            </div>
+
           </form>
+
         </div>
       )
 }

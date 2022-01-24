@@ -92,7 +92,7 @@ const Cart = () => {
 
                         <div className="itemImg">
 
-                            <img src={item.img} />
+                            <img /*alt={item.id}*/ src={item.img} />
 
                         </div>
 
@@ -133,10 +133,10 @@ const Cart = () => {
             <div className="carritoBotones">
 
                 <button className="btnVaciar" onClick={() => clearItems()}>Vaciar Carrito</button>
-                <button className="btnComprar" onClick={() => confirmOrder()}>Realizar Compra</button>
+                {/* <button className="btnComprar" onClick={() => confirmOrder()}>Realizar Compra</button> */}
                 
 
-                {(!procesandoOrden && items.length > 0) && <button onClick={() => confirmOrder()} className="btnComprar">Confirmar Compra</button>}
+                {(!procesandoOrden && items.length > 0) && <button onClick={() => confirmOrder()} className="btnComprar">Realizar Compra</button>}
 
                 { (!procesandoOrden && contact.buyer !== '' && contact.phone !== '' && contact.adress !== '' && contact.comment !== '') &&
                     <div>

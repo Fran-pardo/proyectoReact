@@ -1,0 +1,17 @@
+.btnContacto {
+    margin: 0rem 1rem 1rem 1rem;
+    padding: 0.25rem;
+    border: 1px solid transparent;
+    border-radius: 3px;
+    background-color: #a9a9a9;
+    color: white;
+}
+
+.btnCancel {
+    margin: 0rem 1rem 1rem 1rem;
+    padding: 0.25rem;
+    border: 1px solid transparent;
+    border-radius: 3px;
+    background-color: #ff5252;
+    color: white;
+}

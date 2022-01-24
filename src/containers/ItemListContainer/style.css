@@ -16,7 +16,7 @@ h1 {
 }
 
 .bg-text {
-    color: white;
+    background-color: #000000b8;
     font-weight: bold;
     border: 3px solid #f1f1f1;
     position: absolute;
@@ -27,4 +27,8 @@ h1 {
     width: 80%;
     padding: 20px;
     text-align: center;
+}
+
+.title {
+    color: white;
 }

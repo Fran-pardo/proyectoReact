@@ -79,8 +79,8 @@ const ItemListContainer = ({greeting}) => {
         <div>
 
             <div className='bg home'></div>
-            <div className='bg-text container'>
-                <h1>CLASSIC SWEET CARS</h1>
+            <div className='bg-text'>
+                <h1 className='title'>CLASSIC SWEET CARS</h1>
             </div>
             <ItemList productos={productos} />
 

@@ -2,8 +2,10 @@ import { useState } from 'react'
 
 
 const ContactForm = ({ toggleVisibility, setContact }) => {
+
+    const [buyer, setBuyer] = useState('')
     const [phone, setPhone] = useState('')
-    const [address, setAddress] = useState('')
+    const [adress, setAddress] = useState('')
     const [comment, setComment] = useState('')
 
     const handleContactForm = (e) => {
@@ -11,11 +13,13 @@ const ContactForm = ({ toggleVisibility, setContact }) => {
         toggleVisibility.current.toggleVisibility()
 
         const objContact = {
+            buyer,
             phone,
-            address,
+            adress,
             comment
         }
         setContact(objContact)
+        setBuyer('')
         setPhone('')
         setAddress('')
         setComment('')
@@ -25,6 +29,14 @@ const ContactForm = ({ toggleVisibility, setContact }) => {
         <div className='ContactContainer'>
           <div>Contacto</div>
           <form className='ContactForm' onSubmit={handleContactForm}>
+            <label className='LabelContact'>Nombre:
+              <input
+                className='InputContact'
+                type='text'
+                value={buyer}
+                onChange={({ target }) => setBuyer(target.value)}
+              />
+            </label>
             <label className='LabelContact'>Telefono:
               <input
                 className='InputContact'
@@ -37,7 +49,7 @@ const ContactForm = ({ toggleVisibility, setContact }) => {
               <input
                 className='InputContact'
                 type='text'
-                value={address}
+                value={adress}
                 onChange={({ target }) => setAddress(target.value)}
               />
             </label>

@@ -14,6 +14,7 @@ const Cart = () => {
     const [procesandoOrden, setProcesandoOrden] = useState(false)
 
     const [contact, setContact] = useState({
+        buyer: '',
         phone: '',
         adress: '',
         comment: ''
@@ -27,7 +28,7 @@ const Cart = () => {
         setProcesandoOrden(true)
 
         const objOrden = {
-            buyer: 'Messi',
+            buyer: contact.buyer,
             items: items,
             total: getTotal(),
             phoneNumber: contact.phone,
@@ -135,19 +136,21 @@ const Cart = () => {
                 <button className="btnComprar" onClick={() => confirmOrder()}>Realizar Compra</button>
                 
 
-                {/* {(!procesandoOrden && items.length > 0) && <button onClick={() => confirmOrder()} className="Button">Confirmar Compra</button>} */}
+                {(!procesandoOrden && items.length > 0) && <button onClick={() => confirmOrder()} className="btnComprar">Confirmar Compra</button>}
 
-                {/* {(!procesandoOrden && contact.phone !== '' && contact.adress !== '' && contact.comment !== '') &&
+                { (!procesandoOrden && contact.buyer !== '' && contact.phone !== '' && contact.adress !== '' && contact.comment !== '') &&
                     <div>
+                        <h4>Nombre: {contact.buyer}</h4>
                         <h4>Telefono: {contact.phone}</h4>
                         <h4>Direccion: {contact.adress}</h4>
                         <h4>Comentario: {contact.comment}</h4>
-                        <button onClick={() => setContact({ phone: '', adress: '', comment: ''})} className='Button' style={{backgroundColor: '#db4025'}}>Borrar datos de contacto</button>
+                        <button onClick={() => setContact({ buyer: '', phone: '', adress: '', comment: ''})} className='btnVaciar'>Borrar datos de contacto</button>
                     </div>    
                 }
-                {(!procesandoOrden && items.length) > 0 && <Togglable buttonLabelShow={(contact.phone !== '' && contact.adress !== '' && contact.comment !== '') ? 'Editar contacto' : 'Agregar contacto'} ref={contactFormRef}>
+
+                {(!procesandoOrden && items.length > 0) && <Togglable buttonLabelShow={(contact.buyer !== '' && contact.phone !== '' && contact.adress !== '' && contact.comment !== '') ? 'Editar contacto' : 'Agregar contacto'} ref={contactFormRef}>
                 <ContactForm toggleVisibility={contactFormRef} setContact={setContact} />
-                </Togglable> } */}
+                </Togglable> }
 
             </div>
             
